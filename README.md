@@ -21,7 +21,7 @@ Advanced DDoS Framework with cross-platform support
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/CyberFlood-Pro.git
+git clone https://github.com/SnovBars/CyberFlood-Pro.git
 cd CyberFlood-Pro
 chmod +x install.sh
 ./install.sh
