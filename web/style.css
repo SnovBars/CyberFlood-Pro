@@ -1,0 +1,322 @@
+:root {
+    --primary: #6a0dad;
+    --primary-dark: #4d0a8f;
+    --secondary: #ff6b00;
+    --danger: #ff3d3d;
+    --success: #00c853;
+    --dark: #0f0f1b;
+    --darker: #0a0a12;
+    --light: #f0f0f5;
+    --gray: #252536;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--darker);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.status-bar {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.status-bar > div {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: var(--gray);
+}
+
+.status.connected {
+    color: var(--success);
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Panel Styles */
+.panel {
+    background: var(--dark);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--gray);
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gray);
+    color: var(--secondary);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #a0a0c0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: var(--darker);
+    border: 1px solid var(--gray);
+    color: var(--light);
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.power-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.power-selector button {
+    flex: 1;
+    padding: 10px;
+    background: var(--darker);
+    border: 1px solid var(--gray);
+    color: var(--light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.power-selector button.active, .power-selector button:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Button Styles */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-attack {
+    flex: 2;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.btn-attack:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.4);
+}
+
+.btn-stop {
+    flex: 1;
+    background: var(--darker);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.btn-stop:hover {
+    background: rgba(255, 61, 61, 0.1);
+}
+
+/* Active Attacks Panel */
+.active-attacks {
+    min-height: 300px;
+}
+
+.attacks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.attack-item {
+    background: var(--darker);
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.attack-info {
+    flex: 1;
+}
+
+.attack-type {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--secondary);
+}
+
+.attack-target {
+    color: #a0a0c0;
+    font-size: 14px;
+}
+
+.attack-stats {
+    display: flex;
+    gap: 15px;
+    text-align: right;
+}
+
+.stat {
+    padding: 5px 10px;
+    background: var(--gray);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.attack-controls button {
+    padding: 8px 12px;
+    background: rgba(255, 61, 61, 0.1);
+    color: var(--danger);
+    font-size: 14px;
+}
+
+/* History & Stats */
+.history-stats {
+    margin-top: 25px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    .charts {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #a0a0c0;
+}
+
+.warnings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--danger);
+}
+
+/* Empty State */
+.empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #606080;
+    font-style: italic;
+}
